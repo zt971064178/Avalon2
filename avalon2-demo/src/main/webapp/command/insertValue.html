@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>插值表达式测试</title>
+<script src="../js/avalon2.min.js"></script>
+</head>
+<body ms-controller="test">
+	<div>
+		<p>{{@result.hello}}</p>
+	</div>
+    <script>
+        avalon.define({
+            $id: 'test',
+            aaa: 'aaa',
+            bbb: 'bbb',
+            result :　{
+            	hello : "world"
+            }
+        })
+
+    </script>
+    <p>{{@aaa}}{{@bbb}} 这个性能差些</p>
+    <p>{{@aaa+@bbb}} 这个性能好些</p>
+    <p>{{@aaa+@bbb  | uppercase}} 选择器必须放在表达值的后端</p>
+</body>
+</html>

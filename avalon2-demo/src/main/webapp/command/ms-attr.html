@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ms-attr</title>
+<script src="../js/avalon2.min.js"></script>
+</head>
+<body ms-controller="test">
+	<script>
+	    avalon.define({
+	        $id: 'test',
+	        obj: {title: '普通 ', algin: 'left'},
+	        active: {title: '激活'},
+	        width: 111,
+	        height:222,
+	        path: '../images/zz.jpg',
+	        toggle: false,
+	        array: [{width:1},{height:2}]
+	    })
+	</script>
+	<p>{{@obj.title}}</p>
+	<span ms-attr="@obj">直接引用对象</span>
+	<img ms-attr="{src: @path}" />
+	<span ms-attr="{width: @width, height: @height}">使用对象字面量</span>
+	<span ms-attr="@array">直接引用数组</span>
+	<span ms-attr="[@obj1, @toggle && @active ]" ms-click="@toggle = !@toggle">选择性添加多余属性或重写已有属性</span>
+</body>
+</html>

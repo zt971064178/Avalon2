@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ms-important</title>
+<script src="../js/avalon2.min.js"></script>
+</head>
+<!-- 
+	ms-important的元素节点下面的其他节点也可以使用ms-controller或ms-important
+	与ms-controller不一同的是,当某个属性在ms-important的VM找不到时,就不会所上寻找
+	不要在ms-for内使用ms-important.
+	ms-important只能用于ms-controller的元素里面
+ -->
+<body>
+	<div ms-important='aaa'>
+	      <div ms-controller='ccc'>
+	           <div ms-important='ddd'>
+	
+	          </div>
+          </div>
+	      <div ms-controller='bbb'>
+	
+	      </div>
+	</div>
+</body>
+</html>
